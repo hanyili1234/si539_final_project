@@ -1,0 +1,412 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #111111;
+  background-color: #ffffff;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.75rem 1rem;
+  background: #111111;
+  color: #ffffff;
+  z-index: 1000;
+  text-decoration: none;
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+
+a {
+  color: #555555;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+
+a:focus-visible {
+  outline: 3px solid #111111;
+  outline-offset: 2px;
+}
+
+.header {
+  border-bottom: 1px solid #cccccc;
+  padding: 1rem 1.25rem;
+  position: relative;
+}
+
+.site-title {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0 0 0.5rem 0;
+  font-size: x-large;
+  font-weight: normal;
+}
+
+.site-title a {
+  text-decoration: none;
+}
+
+.site-title a:hover {
+  text-decoration: underline;
+}
+
+.site-tagline {
+  margin: 0;
+  font-size: medium;
+  color: #444444;
+}
+.site-nav {
+  margin-top: 0.75rem;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  display: block;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  border-bottom: 1px solid #cccccc;
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+}
+
+
+.photo-gallery {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #cccccc;
+}
+
+.swipe-grid {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.swipe-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.swipe-grid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.swipe-grid::-webkit-scrollbar-thumb {
+  background: #cccccc;
+  border-radius: 10px;
+}
+
+.swipe-item {
+  flex: 0 0 85%;
+  scroll-snap-align: start;
+}
+
+.swipe-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+.swipe-grid:focus-visible {
+  outline: 3px solid #111111;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-mode a {
+  color: #ffffff;
+}
+
+.dark-mode .hero p,
+.dark-mode .site-tagline,
+.dark-mode .museum-card p,
+.dark-mode .article-figure figcaption,
+.dark-mode .footer {
+  color: #eeeeee;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3 {
+  color: #ffffff;
+}
+
+.dark-mode .header,
+.dark-mode .footer,
+.dark-mode .hero,
+.dark-mode .article-header,
+.dark-mode .photo-gallery {
+  border-color: #333333;
+}
+
+.dark-mode a {
+  color: white;
+}
+
+.dark-mode .museum-card {
+  background-color: #1e1e1e;
+  border-color: #333333;
+}
+
+.dark-mode .museum-card-image {
+  background: #252525;
+  border-color: #333333;
+}
+
+.dark-mode .site-nav a[aria-current="page"] {
+  border-bottom-color: #ffffff;
+}
+
+#dark-mode-toggle {
+  background: none;
+  border: 1px solid #cccccc;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+
+.dark-mode #dark-mode-toggle {
+  color: white;
+  border-color: #555555;
+  background-color: #333333;
+}
+
+#dark-mode-toggle:hover {
+  background-color: #f0f0f0;
+  border-color: #999999;
+}
+
+.dark-mode #dark-mode-toggle:hover {
+  background-color: #444444;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+@media (min-width: 720px) {
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .header-brand {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .site-nav {
+    margin-top: 0;
+  }
+
+  .site-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1.5rem;
+  }
+
+  .site-nav a {
+    padding: 0.25rem 0;
+    border-bottom: 1px solid transparent;
+  }
+
+  .site-nav a:hover,
+  .site-nav a[aria-current="page"] {
+    border-bottom-color: #111111;
+  }
+}
+
+main {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+.hero {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #cccccc;
+}
+
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0 0 1rem 0;
+  font-size: xx-large;
+  font-weight: normal;
+  line-height: 1.3;
+}
+
+.hero p {
+  margin: 0;
+  font-size: large;
+  color: #333333;
+}
+
+h2 {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0 0 1.25rem 0;
+  font-size: x-large;
+  font-weight: normal;
+}
+h3 {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0 0 1.25rem 0;
+  font-size: large;
+  font-weight: normal;
+}
+
+
+.museum-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.swipe-item {
+    flex: 0 0 45%;
+  }
+
+@media (min-width: 1200px) {
+  .museum-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.museum-card {
+  border: 1px solid #cccccc;
+  padding: 0;
+  background: #ffffff;
+  overflow: hidden;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.museum-card-inner {
+  padding: 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.museum-card-image {
+  margin: 0;
+  border-bottom: 1px solid #cccccc;
+  background: #f5f5f5;
+}
+
+.museum-card-image img {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.museum-card h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: x-large;
+  font-weight: normal;
+}
+
+.museum-card p {
+  margin: 0 0 1rem 0;
+  font-size: medium;
+  color: #444444;
+  flex-grow: 1;
+}
+
+.museum-card a {
+  font-size: medium;
+  font-weight: bold;
+}
+
+.article-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #cccccc;
+}
+
+.article-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: xx-large;
+  font-weight: normal;
+}
+
+. {
+  margin: 0;
+  font-size: medium;
+  color: #555555;
+}
+
+.article-figure {
+  margin: 0 0 1.75rem 0;
+  padding: 0;
+}
+
+.article-figure img {
+  border-radius: 16px;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.article-figure figcaption {
+  margin-top: 0.5rem;
+  font-size: medium;
+  color: #555555;
+}
+
+.my-story p {
+  margin: 0 0 1.25rem 0;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: medium;
+}
+
+.footer {
+  border-top: 1px solid #cccccc;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  font-size: medium;
+  color: #444444;
+}
+
+.footer p {
+  margin: 0;
+}
